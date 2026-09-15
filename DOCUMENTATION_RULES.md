@@ -1,8 +1,8 @@
 # AI App Development Workflow — Common Documentation Rules
 
 **File:** `DOCUMENTATION_RULES.md`  
-**Status:** Draft v0.1  
-**Applies to:** `WORKFLOW.md`, `templates/`, `prompts/`, `examples/`, Project Repository의 주요 Markdown 문서
+**Status:** Active  
+**Applies to:** `WORKFLOW.md`, `templates/`, `prompts/`, Project Repository의 주요 Markdown 문서
 
 ---
 
@@ -16,7 +16,7 @@
 - 같은 결정을 여러 문서에 중복 작성하지 않는다.
 - AI가 필요한 문서만 읽고 정확하게 작업할 수 있게 한다.
 - 문서가 불필요하게 비대해지는 것을 방지한다.
-- Workflow, Template, Prompt, Example, Project 문서의 역할이 섞이지 않게 한다.
+- Workflow, Template, Prompt, Project 문서의 역할이 섞이지 않게 한다.
 
 > **무엇을 개발할지는 Project 문서가, 어떻게 개발할지는 `WORKFLOW.md`가, 문서를 어떻게 작성할지는 이 문서가 관리한다.**
 
@@ -202,7 +202,7 @@ CLAUDE.md
 2. 예시 축소
 3. 작성 형식을 Template으로 이동
 4. 실제 작업 지시를 Prompt로 이동
-5. 프로젝트 고유 사례를 Example로 이동
+5. 필요한 사례는 문서 내부의 명시적 Non-normative Example로 최소화
 
 중요한 규칙을 단순히 길이를 줄이기 위해 삭제하지 않는다.
 
@@ -317,7 +317,7 @@ Example에 포함된 기술, Entity, 상태, UI 구조를 범용 규칙처럼 �
 
 모든 파일에 별도 Version을 반복해서 넣지 않는다.
 
-Project Repository는 자신이 채택한 Workflow Version을 식별할 수 있어야 한다.
+버전 추적이 유용한 Project Repository는 자신이 채택한 Workflow Version을 기록하는 것을 권장한다. 중앙 Workflow는 기록 위치나 형식을 강제하지 않는다.
 
 필요한 경우 문서 상단에는 최소 Metadata만 둔다.
 
@@ -335,7 +335,6 @@ Project Repository는 자신이 채택한 Workflow Version을 식별할 수 있�
 | `WORKFLOW.md` | 개발 방법, 단계, 진입/종료 조건, 역할 경계, Verification/DONE 상위 규칙, Feedback Loop | Template 상세 항목, 실제 Prompt 문구, 특정 Project 기능·기술 |
 | `templates/` | 실제 Project 문서의 구조와 작성 항목 | 새로운 Workflow 정책, 특정 서비스 값 |
 | `prompts/` | 기존 Workflow와 Project 문서를 현재 단계에서 AI가 실행하도록 하는 지시 | 새로운 제품 정책, 새로운 Workflow 정책 |
-| `examples/` | 실제 또는 가상의 적용 예시 | Source of Truth, 범용 규칙 |
 | Project 문서 | 해당 프로젝트의 실제 확정 결정 | 범용 Workflow 자체 |
 
 ## 5.1 Template 추가 규칙 — MUST

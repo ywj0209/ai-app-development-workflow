@@ -373,7 +373,9 @@ Commit or push only when the current task or user explicitly requires it.
 
 ## 14. Completion Report
 
-Use this format when reporting implementation work:
+If the current task Prompt defines an output or report format, follow that Prompt-specific format.
+
+Use the fallback format below only when the current task does not define one:
 
 ```text
 ## Summary
@@ -421,6 +423,7 @@ Final `DONE` status follows `WORKFLOW.md`.
 - [ ] Documentation changes follow the Owner rule.
 - [ ] Unrelated user changes and secrets are protected.
 - [ ] Commit / push behavior is not forced globally.
+- [ ] Prompt-specific output format is used when the current task defines one; the CLAUDE.md report format is only a fallback.
 - [ ] Completion reporting is concise and verifiable.
 - [ ] `WORKFLOW.md`, Baselines, Backlog, and Feature Spec responsibilities are not duplicated.
 - [ ] No project-specific technology is forced by this Template.

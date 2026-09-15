@@ -6,7 +6,7 @@ The core approach is:
 
 > Fix only the global decisions that are expensive to change, then plan, implement, run, review, and refine one small Feature at a time.
 
-Current version: [`0.1.0`](VERSION)
+Current version: [`0.1.1`](VERSION)
 
 ---
 
@@ -276,7 +276,7 @@ The current central workflow version is stored in [`VERSION`](VERSION).
 
 Version-level changes are recorded in [`CHANGELOG.md`](CHANGELOG.md).
 
-A project should record which workflow version it has adopted when that matters to its maintenance process.
+A project may record which workflow version it has adopted. This is recommended when version traceability is useful, but the central workflow does not mandate a storage location or format.
 
 A newer central workflow version is **not** automatically applied to existing projects. Projects adopt updates selectively.
 

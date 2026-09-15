@@ -2,7 +2,7 @@
 
 ## Role
 
-You are the Planner for the current READY Backlog Item.
+You are the Planner for the current Backlog Item selected from `READY`.
 
 Your task is to determine whether the current item needs a Feature Spec and, if it does, define only the local product decisions required to implement that Feature correctly.
 
@@ -53,7 +53,7 @@ Do not read every project document unless the current Feature genuinely requires
 
 ## Scope
 
-This task covers one READY Backlog Item only.
+This task covers one Backlog Item only. The Item is expected to enter this task from `READY` and become the active `IN_PROGRESS` Item.
 
 Do not expand into:
 
@@ -67,6 +67,24 @@ code changes
 ```
 
 If the current item is too large for one planning → implementation → verification loop, recommend splitting it before continuing.
+
+---
+
+## Backlog Status Transition
+
+When planning starts for a `READY` Item, update only the current Item in `IMPLEMENTATION_BACKLOG.md`:
+
+```text
+READY
+↓
+IN_PROGRESS
+```
+
+`IN_PROGRESS` means the current Feature loop is active. It includes Feature Planning, Implementation, and Feature Review.
+
+Do not change other Backlog Items.
+
+If the Backlog cannot be synchronized safely, report the issue instead of pretending the transition occurred.
 
 ---
 
@@ -204,8 +222,6 @@ Avoid:
 ```text
 Create a POST API and database insert function.
 ```
-
-Feature Planning Prompt must not decide implementation structure.
 
 ---
 
@@ -482,6 +498,8 @@ Use one verdict:
 
 The current Feature has enough approved detail to implement without product-policy guessing.
 
+If a Feature Spec is required, its confirmed Markdown must already be saved in the Project Repository before using this verdict.
+
 #### READY_AFTER_BASELINE_UPDATE
 
 The Feature is locally clear, but an Owner Baseline must be updated first.
@@ -731,10 +749,14 @@ decision
 ↓
 Feature Spec Markdown
 ↓
-Repository
+Project Repository
+↓
+READY_FOR_IMPLEMENTATION
 ↓
 implementation
 ```
+
+A chat-only Feature Spec is not implementation-ready.
 
 Do not treat unresolved recommendations in chat as approved product decisions.
 
@@ -758,6 +780,8 @@ READY_FOR_IMPLEMENTATION
 
 ```text
 Feature Spec complete
++
+confirmed Feature Spec saved in the Project Repository
 +
 all implementation-blocking local decisions resolved
 +

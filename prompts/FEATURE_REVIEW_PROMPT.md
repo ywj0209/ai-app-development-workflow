@@ -74,7 +74,7 @@ CLAUDE.md
 current Backlog Item
 relevant Baseline document(s)
 current Feature Spec — if one exists
-Implementation Report
+Implementation Report — if available
 relevant implemented code
 ```
 
@@ -150,9 +150,11 @@ Do not expand the review into future or adjacent Backlog Items.
 
 ### 1. Inspect Implementation Result
 
-Review the Implementation Report and confirm its claims against the Repository when needed.
+If an Implementation Report is available, review it and confirm its claims against the Repository.
 
-Inspect:
+If no Implementation Report is available, reconstruct the implementation state from the Repository, current diff, relevant tests, and actual execution evidence.
+
+When a report exists, inspect:
 
 ```text
 Implementation Status
@@ -166,6 +168,8 @@ User Decision Required
 ```
 
 Do not assume the Implementation Report is correct merely because it says `PASS` or `COMPLETE`.
+
+The Implementation Report is supporting context, not the product Source of Truth.
 
 Use the Repository and actual execution results as evidence.
 
@@ -258,6 +262,8 @@ must be reported accurately.
 
 Never report unexecuted runtime behavior as `PASS`.
 
+`N/A` is an applicability marker, not a verification result. Use `N/A` only when the runtime scenario does not apply to the current Feature.
+
 ---
 
 ### 5. Verify the Core Scenario
@@ -320,6 +326,8 @@ If no Feature Spec exists and Acceptance Criteria are not applicable, report:
 ```text
 N/A
 ```
+
+Here too, `N/A` means the criterion set is not applicable; it is not a fifth verification result.
 
 ---
 
@@ -742,13 +750,13 @@ Notes:
 
 ## 5. Runtime Verification
 
-| Scenario | Status | Evidence / Result |
+| Scenario | Result | Evidence / Result |
 |---|---|---|
 | ... | PASS / FAIL / NOT_RUN / BLOCKED / N/A | ... |
 
 ## 6. Acceptance Criteria
 
-| AC | Status | Evidence |
+| AC | Result | Evidence |
 |---|---|---|
 | ... | PASS / FAIL / NOT_RUN / BLOCKED / N/A | ... |
 

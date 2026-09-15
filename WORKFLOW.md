@@ -1,6 +1,6 @@
 # AI App Development Workflow
 
-**Status:** Draft  
+**Status:** Active  
 **Scope:** AI-assisted app and web product development workflow
 
 ---
@@ -42,7 +42,6 @@ Update
 - 문서 작성 공통 규칙 → `DOCUMENTATION_RULES.md`
 - 실제 문서 구조 → `templates/`
 - AI 실행 지시 → `prompts/`
-- 실제 적용 사례 → `examples/`
 - 특정 제품의 결정 → 해당 Project Repository
 
 ---
@@ -99,6 +98,8 @@ Project CLAUDE.md
 ↓
 Next READY Item
 ↓
+READY → IN_PROGRESS
+↓
 Feature Spec Needed?
 ├─ NO ───────────────────┐
 └─ YES → Feature Planning
@@ -106,8 +107,6 @@ Feature Spec Needed?
       Baseline Impact
             ↓
             └────────────┐
-                         ↓
-                    IN_PROGRESS
                          ↓
                    Implementation
                          ↓
@@ -272,12 +271,18 @@ Workflow는 **언제 `CLAUDE.md`가 필요한지**를 정의한다.
 
 ## 6. Phase C — Feature Planning Gate
 
-`READY` Item을 선택했다고 항상 바로 구현하지 않는다.
+`READY` Item을 다음 작업으로 선택했다고 항상 바로 구현하지 않는다.
 
-현재 Item에 상세 Feature Planning이 필요한지 먼저 판단한다.
+현재 Item을 Feature Planning Gate에서 다루기 시작하는 순간 해당 Item만 `READY → IN_PROGRESS`로 변경한다.
+
+`IN_PROGRESS`는 코드 작성 시작만을 의미하지 않는다. 현재 Item의 Feature Planning, Implementation, Feature Review가 진행 중임을 뜻한다.
+
+그 다음 현재 Item에 상세 Feature Planning이 필요한지 판단한다.
 
 ```text
-READY Item
+READY Item 선택
+↓
+READY → IN_PROGRESS
 ↓
 Feature Spec Needed?
 ├─ NO  → Implementation
@@ -434,7 +439,9 @@ Implementer는 제품 결정자가 아니다.
 
 ### 8.1 Start
 
-작업을 시작하면:
+Feature Development Loop는 `READY` Item을 다음 작업으로 선택해 Feature Planning Gate에 진입할 때 시작한다.
+
+이때 현재 Item만:
 
 ```text
 READY
@@ -443,6 +450,8 @@ IN_PROGRESS
 ```
 
 로 변경한다.
+
+`IN_PROGRESS` 상태는 Feature Planning, Implementation, Feature Review 전체 Loop 동안 유지한다.
 
 기본적으로 하나의 Feature Loop를 완료한 뒤 다음 Feature로 이동한다.
 
@@ -759,9 +768,9 @@ VERSION
 
 기존 Project는 필요한 변경만 검토 후 선택적으로 적용한다.
 
-각 Project Repository는 **자신이 채택한 Workflow Version을 식별할 수 있어야 한다.**
+버전 추적이 유용한 Project는 자신이 채택한 Workflow Version을 기록하는 것을 권장한다.
 
-구체적인 기록 방식은 Project 시작 관련 Template에서 정의한다.
+중앙 Workflow는 기록 위치나 형식을 강제하지 않는다. 기록하지 않은 Project는 `NOT RECORDED`로 취급할 수 있다.
 
 ---
 

@@ -4,6 +4,19 @@ All notable changes to the central AI App Development Workflow are recorded here
 
 This changelog tracks reusable workflow changes only. Project-specific product, architecture, data model, or feature changes belong in each project repository.
 
+## 0.1.1 — 2026-09-15
+
+### Fixed
+
+- Unified `READY → IN_PROGRESS` so the current Item becomes active when Feature Planning begins, not only when code implementation starts.
+- Required confirmed Feature Specs to be saved in the Project Repository before `READY_FOR_IMPLEMENTATION`.
+- Made adopted Workflow Version recording recommended but optional, without requiring a dedicated Project template or storage format.
+- Made the Implementation Report optional input for Feature Review; Review can reconstruct state directly from Repository evidence.
+- Removed obsolete `examples/` directory references after examples were excluded from the v0.1 repository structure.
+- Changed central Core document metadata from `Draft` to `Active`.
+- Clarified that Prompt-specific report formats override the fallback Completion Report in `CLAUDE.md`.
+- Clarified that `N/A` is an applicability marker, while verification results remain `PASS / FAIL / NOT_RUN / BLOCKED`.
+
 ## 0.1.0 — 2026-09-15
 
 ### Added
